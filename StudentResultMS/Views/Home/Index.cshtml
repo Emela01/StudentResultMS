@@ -2,7 +2,47 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-4">
+    <h1>Student Result Management System</h1>
+    <p class="text-muted">Manage students, courses, and results easily</p>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <h5>Students</h5>
+                <p>Manage student records</p>
+                <a asp-controller="Student" asp-action="Index" class="btn btn-primary">
+                    Go
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <h5>Courses</h5>
+                <p>Manage course details</p>
+                <a asp-controller="Course" asp-action="Index" class="btn btn-success">
+                    Go
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body text-center">
+                <h5>Results</h5>
+                <p>View and calculate grades</p>
+                <a asp-controller="Result" asp-action="Index" class="btn btn-warning">
+                    Go
+                </a>
+            </div>
+        </div>
+    </div>
+
 </div>

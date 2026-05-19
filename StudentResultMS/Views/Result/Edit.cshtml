@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model StudentResultMS.Models.Result
+
+<h2 class="mb-3">Edit Result</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Student Name</label>
+        <select asp-for="StudentId" class="form-control select2">
+            @foreach (var student in ViewBag.Students)
+            {
+                <option value="@student.Id">@student.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Course Name</label>
+        <select asp-for="CourseId" class="form-control select2">
+            @foreach (var course in ViewBag.Courses)
+            {
+                <option value="@course.Id">@course.CourseName</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Score</label>
+        <input asp-for="Score" class="form-control" type="number" min="0" max="100" />
+        <span asp-validation-for="Score" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
